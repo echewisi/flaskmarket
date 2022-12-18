@@ -1,0 +1,44 @@
+{% extends 'home.html' %}
+
+{%block title%}
+Marketplace
+{%endblock title%}
+
+{%block content%}
+<h1>Welcome to the market place</h1>
+
+
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Barcode</th>
+            <th scope="col">Price</th>
+        </tr>
+        </thead>
+        <tbody>
+            {%for item in items%}
+            <tr class="active-row">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.barcode}}</td>
+                <td>{{item.price}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+
+<style>
+    .styled-table{
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(117, 105, 105, 0.342);
+    }
+</style>
+
+
+{%endblock content%}
