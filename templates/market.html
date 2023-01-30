@@ -6,15 +6,18 @@ Marketplace
 
 {%block content%}
 <h1>Welcome to the market place</h1>
+<br>
+<br>
 
 
     <table class="styled-table">
         <thead>
         <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Name</th>
-            <th scope="col">Barcode</th>
+            <th scope="col"> Id</th>
+            <th scope="col"> Name</th>
+            <th scope="col"> Barcode</th>
             <th scope="col">Price</th>
+            <th class="col"> Options</th>
         </tr>
         </thead>
         <tbody>
@@ -24,6 +27,8 @@ Marketplace
                 <td>{{item.name}}</td>
                 <td>{{item.barcode}}</td>
                 <td>{{item.price}}</td>
+                <td> <button class="btn btn-outline btn-info">More info</button></td>
+                <td><button class=" btn btn-outline btn-success">Purchase</button></td>
             </tr>
             {%endfor%}
         </tbody>
@@ -31,12 +36,37 @@ Marketplace
 
 <style>
     .styled-table{
+        width: 800px;
         border-collapse: collapse;
-        margin: 25px 0;
-        font-size: 0.9em;
-        font-family: sans-serif;
-        min-width: 400px;
-        box-shadow: 0 0 20px rgba(117, 105, 105, 0.342);
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td{
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #fff;
+    }
+
+    th{
+        text-align: left;
+    }
+
+    thead, th.col{
+        background-color: #55608f;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+    }
+
+    tbody, tr{
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    td{
+        position: relative;
+        background-color: rgb(63, 58, 58);
+        
     }
 </style>
 
